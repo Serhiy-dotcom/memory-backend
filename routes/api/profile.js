@@ -81,7 +81,7 @@ router.get('/recommendation', auth, async (req, res) => {
 			usersRecommendation = usersRecommendation.slice(0, 5);
 		}
 
-		usersRecommendation = usersRecommendation.reduce((acc, prev) => {
+		usersRecommendation = usersRecommendation.reduce((prev, acc) => {
 			const isFound = prev.find(({ user }) => acc.user === user);
 
 			if (!isFound) {
